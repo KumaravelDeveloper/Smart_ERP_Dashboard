@@ -31,11 +31,11 @@ export default function App() {
   const [sandboxModule, setSandboxModule] = useState('employee'); // employee, attendance, payroll, inventory, reports
 
   const modules = [
-    { id: 'employee', name: 'Employee Roster', icon: Users, component: EmployeeModule, color: '#ff5e84', desc: 'Manage profiles and team positions.', image: '/smarterp_employee.jpg' },
-    { id: 'attendance', name: 'Attendance sheets', icon: Calendar, component: AttendanceModule, color: '#ff7ca0', desc: 'Roster logs and check-in statuses.', image: '/smarterp_attendance.jpg' },
-    { id: 'payroll', name: 'Payroll Calculator', icon: DollarSign, component: PayrollModule, color: '#ff8ca4', desc: 'Salary sliders and tax structures.', image: '/smarterp_payroll.jpg' },
-    { id: 'inventory', name: 'Inventory Ledger', icon: Package, component: InventoryModule, color: '#ffa6b8', desc: 'Stock alerts and direct level adjusters.', image: '/smarterp_inventory.jpg' },
-    { id: 'reports', name: 'Reports Desk', icon: TrendingUp, component: ReportsModule, color: '#ffc0cb', desc: 'SVG charts and dynamic tooltip values.', image: '/smarterp_reports.jpg' },
+    { id: 'employee', name: 'Employee Roster', icon: Users, component: EmployeeModule, color: '#ff5e84', desc: 'Manage profiles and team positions.', image: import.meta.env.BASE_URL + 'smarterp_employee.jpg' },
+    { id: 'attendance', name: 'Attendance sheets', icon: Calendar, component: AttendanceModule, color: '#ff7ca0', desc: 'Roster logs and check-in statuses.', image: import.meta.env.BASE_URL + 'smarterp_attendance.jpg' },
+    { id: 'payroll', name: 'Payroll Calculator', icon: DollarSign, component: PayrollModule, color: '#ff8ca4', desc: 'Salary sliders and tax structures.', image: import.meta.env.BASE_URL + 'smarterp_payroll.jpg' },
+    { id: 'inventory', name: 'Inventory Ledger', icon: Package, component: InventoryModule, color: '#ffa6b8', desc: 'Stock alerts and direct level adjusters.', image: import.meta.env.BASE_URL + 'smarterp_inventory.jpg' },
+    { id: 'reports', name: 'Reports Desk', icon: TrendingUp, component: ReportsModule, color: '#ffc0cb', desc: 'SVG charts and dynamic tooltip values.', image: import.meta.env.BASE_URL + 'smarterp_reports.jpg' },
   ];
 
   const handleLaunchSandbox = (modId) => {
@@ -128,7 +128,7 @@ export default function App() {
               {/* Hero Showcase Image */}
               <div style={styles.showcaseImageWrapper} className="glass-panel">
                 <img 
-                  src="/smarterp_hero_cinematic.jpg" 
+                  src={import.meta.env.BASE_URL + 'smarterp_hero_cinematic.jpg'} 
                   alt="SmartERP Visual Design Concept" 
                   style={styles.showcaseImage} 
                 />

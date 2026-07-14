@@ -141,7 +141,7 @@ export default function CinematicVideoPlayer() {
     >
       {/* Background Graphic Zooming */}
       <img
-        src="/smarterp_hero_cinematic.jpg"
+        src={`${import.meta.env.BASE_URL}smarterp_hero_cinematic.jpg`}
         alt="SmartERP Cinematic View"
         className="cinematic-video-media"
         style={{
