@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/Smart_ERP_Dashboard/',
   plugins: [react()],
   build: {
-    outDir: '../',
-    emptyOutDir: false, // CRITICAL: Prevent deleting the root directory containing source code
+    outDir: '../dist',
+    emptyOutDir: true, // Safe to empty since it is a dedicated build folder
   }
 })
