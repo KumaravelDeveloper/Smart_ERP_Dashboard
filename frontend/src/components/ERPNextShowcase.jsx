@@ -140,14 +140,19 @@ const styles = {
     color: 'var(--text-secondary)',
     marginTop: '10px',
   },
-  screenshotSection: {
-    marginTop: '24px',
+  screenshotGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '20px',
+    marginTop: '20px',
+  },
+  screenshotCard: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px',
+    gap: '8px',
   },
   screenshotTitle: {
-    fontSize: '12px',
+    fontSize: '11px',
     fontWeight: '800',
     color: 'var(--text-muted)',
     letterSpacing: '0.5px',
@@ -155,16 +160,19 @@ const styles = {
   },
   imageContainer: {
     width: '100%',
+    height: '180px',
     borderRadius: '16px',
     overflow: 'hidden',
     border: '1px solid var(--accent-border)',
-    boxShadow: 'var(--shadow-md)',
+    boxShadow: 'var(--shadow-sm)',
     backgroundColor: '#ffffff',
   },
   screenshotImg: {
     width: '100%',
-    height: 'auto',
+    height: '100%',
+    objectFit: 'cover',
     display: 'block',
+    transition: 'transform 0.3s ease',
   }
 };
 
@@ -228,14 +236,17 @@ const SECTIONS = [
           </table>
         </div>
 
-        <div style={styles.screenshotSection}>
-          <div style={styles.screenshotTitle}>📷 ERPNext Mockup: Chart of Accounts & Tree Hierarchy</div>
-          <div style={styles.imageContainer}>
-            <img 
-              src={import.meta.env.BASE_URL + 'erpnext_chart_of_accounts.png'} 
-              alt="Chart of Accounts Mockup" 
-              style={styles.screenshotImg} 
-            />
+        <div style={styles.screenshotGrid}>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Chart of Accounts Tree Hierarchy</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_chart_of_accounts.png'} 
+                alt="Chart of Accounts Mockup" 
+                style={styles.screenshotImg} 
+                className="hover-zoom"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -312,14 +323,46 @@ const SECTIONS = [
           </table>
         </div>
 
-        <div style={styles.screenshotSection}>
-          <div style={styles.screenshotTitle}>📷 ERPNext Mockup: General Ledger & Purchase Journal Entries</div>
-          <div style={styles.imageContainer}>
-            <img 
-              src={import.meta.env.BASE_URL + 'erpnext_purchase_ledger.png'} 
-              alt="Purchase Ledger Mockup" 
-              style={styles.screenshotImg} 
-            />
+        <div style={styles.screenshotGrid}>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Request for Quotation (RFQ)</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_rfq.png'} 
+                alt="RFQ Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Purchase Order</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_purchase_order.png'} 
+                alt="Purchase Order Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Purchase Receipt Ledger</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_purchase_receipt.png'} 
+                alt="Purchase Receipt Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Purchase Invoice GL Entry</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_purchase_ledger.png'} 
+                alt="Purchase Ledger Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -394,6 +437,59 @@ const SECTIONS = [
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div style={styles.screenshotGrid}>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Sales Quotation</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_sales_quotation.png'} 
+                alt="Sales Quotation" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Sales Order (5% Discount)</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_sales_order.png'} 
+                alt="Sales Order" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Delivery Note Stock Ledger</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_delivery_note.png'} 
+                alt="Delivery Note" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Accounts Receivable Report</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_receivable.png'} 
+                alt="Accounts Receivable" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Sales Invoice GL Entry</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_sales_invoice.png'} 
+                alt="Sales Invoice GL" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -481,14 +577,36 @@ const SECTIONS = [
           </table>
         </div>
 
-        <div style={styles.screenshotSection}>
-          <div style={styles.screenshotTitle}>📷 ERPNext Mockup: Bill of Materials & Manufacturing flowchart</div>
-          <div style={styles.imageContainer}>
-            <img 
-              src={import.meta.env.BASE_URL + 'erpnext_manufacturing.png'} 
-              alt="Manufacturing Mockup" 
-              style={styles.screenshotImg} 
-            />
+        <div style={styles.screenshotGrid}>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Bill of Materials (BOM)</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_manufacturing.png'} 
+                alt="Manufacturing Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Manufacturing Item List</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_item_masters.png'} 
+                alt="Item Masters Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
+          </div>
+          <div style={styles.screenshotCard}>
+            <div style={styles.screenshotTitle}>📷 Work Order</div>
+            <div style={styles.imageContainer}>
+              <img 
+                src={import.meta.env.BASE_URL + 'erpnext_work_order.png'} 
+                alt="Work Order Mockup" 
+                style={styles.screenshotImg} 
+              />
+            </div>
           </div>
         </div>
       </div>
