@@ -17,11 +17,13 @@ import {
   Terminal,
   Trash2,
   Cpu,
-  RefreshCw
+  RefreshCw,
+  Award
 } from 'lucide-react';
 
 import FigmaToCode from './components/FigmaToCode';
 import SkillsTimeline from './components/SkillsTimeline';
+import ERPNextShowcase from './components/ERPNextShowcase';
 
 // Modules
 import EmployeeModule from './components/modules/EmployeeModule';
@@ -31,7 +33,7 @@ import InventoryModule from './components/modules/InventoryModule';
 import ReportsModule from './components/modules/ReportsModule';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('casestudy'); // casestudy or sandbox
+  const [activeTab, setActiveTab] = useState('casestudy'); // casestudy, sandbox, or erpnext
   const [sandboxModule, setSandboxModule] = useState('employee'); // employee, attendance, payroll, inventory, reports
   
   // Backend Logs state
@@ -132,6 +134,19 @@ export default function App() {
               <BookOpen size={14} style={{ marginRight: '6px' }} />
               UX Design & Process
             </button>
+            
+            <button
+              onClick={() => setActiveTab('erpnext')}
+              style={{
+                ...styles.navTabBtn,
+                color: activeTab === 'erpnext' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                fontWeight: activeTab === 'erpnext' ? '700' : '500',
+              }}
+            >
+              <Award size={14} style={{ marginRight: '6px' }} />
+              ERPNext Showcase
+            </button>
+
             <button
               onClick={() => setActiveTab('sandbox')}
               style={{
@@ -281,6 +296,20 @@ export default function App() {
                   })}
                 </div>
               </section>
+            </motion.div>
+          )}
+
+          {/* ERPNEXT SHOWCASE TAB */}
+          {activeTab === 'erpnext' && (
+            <motion.div
+              key="erpnext"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              style={styles.contentSection}
+            >
+              <ERPNextShowcase />
             </motion.div>
           )}
 
